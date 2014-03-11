@@ -1,0 +1,23 @@
+<!--
+Lazy generic form for log in, edit and create
+-->
+{% extends "blogsimple/base.html" %}
+{% block main %}
+<br>
+<form action=""  method="post">
+  {% csrf_token %}
+  <div class="row col-lg-8">
+  {% for field in form %}
+  <div class="form-group">
+    <br>
+      {{ field.label_tag }}: {{ field }}
+    <div class="error">{{ field.errors }}</div> 
+ </div>
+  {% endfor %}
+<div class="error">{{ form.non_field_errors }}</div>
+ <br>
+  <button class="btn btn-primary" type="submit" name="save" value="save" />Save</button>
+  <a class="btn btn-primary"  href="{% url blogsimple:index %}">Cancel</a>
+</div>
+</form>
+{% endblock %}

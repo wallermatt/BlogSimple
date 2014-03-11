@@ -1,0 +1,9 @@
+{% extends "blogsimple/base.html" %}
+{% block main %}
+{% include "blogsimple/blog_display.html" %}
+<br>
+{% if logged_in %}
+  <a class="btn btn-primary"  href="{% url blogsimple:edit blog.id  %}">Edit</a>
+  <a class="btn btn-primary"  href="{% url blogsimple:delete blog.id  %}">Delete</a>
+{% endif %}
+{% endblock %}

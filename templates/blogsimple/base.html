@@ -1,0 +1,36 @@
+<!--
+      BlogSimple base.html 
+      Displays header with options then includes current page
+-->
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>BlogSimple</title>
+    <link rel="stylesheet" type="text/css" href="/static/blogsimple/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/blogsimple/css/custom.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="nav navbar-inverse">
+      <ul class="nav navbar-nav"
+	  <li><a class="navbar-brand" href="{% url blogsimple:index %}">BlogSimple</a></li>
+	  {% if logged_in %}
+            <li><a href="{% url blogsimple:logout %}">Logout</a></li>
+            <li><a href="{% url blogsimple:create %}">Create</a></li>
+          {% else %}
+            <li><a href="{% url blogsimple:login %}">Login</a></li>
+          {% endif %}
+      </ul>
+    </div>
+    <br>
+    <!-- Main block  -->
+    <div class="container">
+      {% block main %}{% endblock %}
+    </div>
+    <hr>
+    <div class="footer">
+      <p>&copy; 2014</p>
+     </div>
+    </div>
+  </body>
+</html>
