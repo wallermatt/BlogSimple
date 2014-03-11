@@ -24,15 +24,15 @@ If deleted selected, user is redirected to confirmation page. If they confirm, t
 <h4>/blogsimple/login and /blogsimple/logout</h4>
 Django user authorisation functionality is used. Users are created using admin. Once logged out successfully user is redirected to main page.
 
-<h>Note</h4>
+<h4>Note</h4>
 
 Memcache used to hold all blog details. Three levels of keys:
 
-'year_list':<list of years blogs created on>, e.g. 'year_list': [2013, 2014]
+'year_list': list of years blogs created on, e.g. 'year_list': [2013, 2014]
 
-<year>:<list of blogs created on that year>, e.g. '2014': ['487657648', '459334565']
+year: list of blogs created on that year, e.g. '2014': ['487657648', '459334565']
 
-<blog.id>: <actual blog object>, e.g. '487657648': <blog.object> 
+blog.id: actual blog object, e.g. '487657648': blog.object 
 
 This approach assumes that each memcache entry won't go beyond 1mb limit. It also assumes that there won't be a number of users updating data on same blog concurrently.
 
