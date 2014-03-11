@@ -4,7 +4,9 @@ Simple Blog application to play with Django-Nonrel and Google App Engine.
 
 It's based round the framework at http://github.com/GoogleCloudPlatform/appengine-django-skeleton (example at https://developers.google.com/appengine/#getstarted-framework-django). It sits in the appengine-django-skeleton directory.
 
-settings.py was modified to add 'blogsimple' to INSTALLED_APPS and 'django.middleware.csrf.CsrfViewMiddleware' to MIDDLEWARE_CLASSES.
+settings.py was modified to add *'blogsimple'* to INSTALLED_APPS and *'django.middleware.csrf.CsrfViewMiddleware'* to MIDDLEWARE_CLASSES.
+
+urls.py had the following lines added: *url(r'^blogsimple/', include('blogsimple.urls', namespace="blogsimple")),*
 
 <h4>/blogsimple</h4>
 BlogSimple main page. Displays all blogs in date created order, newest first, each page holding 5 entries. Blog title links to individual blog disply. 
